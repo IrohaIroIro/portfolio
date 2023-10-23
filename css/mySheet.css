@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2? family=月見+角丸& family=禅+紅堂& display=swap');
+@import url('https://fonts.googleapis.com/css2? family= Bebas+Neue & family= Tilt+Neon & family=月見+Rounded & family= Zen+kurenaido & display=swap');
+
+:root{
+    font-family: '月見丸'、サンセリフ;
+    font-family: 'Zen Kurenaido'、サンセリフ;
+}
+
+body {
+    font-family: '月見丸'、サンセリフ;
+    --bg-success: #3cff00;
+}
+
+.btn {
+    border-radius: 30px;
+}
+
+.container-fluid.bg-success{
+    border-radius: 5px;
+}
+
+.container-fluid {
+    background-color: #00B900;
+    
+}
+
+a.navbar-brand.text-black
+{
+    font-weight: bold;
+}
