@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<head>
+
+  <title>IrohaPortfolio</title>
+
+  <meta charset="Shift_JIS">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Required meta tags -->
+  <!-- <meta charset="utf-8"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <!-- Vue.js 3 -->
+  <script src="https://unpkg.com/vue@3.2.22/dist/vue.global.js"></script>
+  <!-- スタイルの変更 -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!--jQuery-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.slider').bxSlider({
+        auto: true,
+        pause: 5000,
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <font color="#555533">
+
+    <!--背景用-->
+    <img src="img\vine.png" alt="" style="transform: rotate(-140deg); position:fixed; margin-top:50%" width="150%">
+
+    <!--ページトップへ戻るボタン-->
+    <div id="page-top" class="sticky-top">
+      <a href="#top">
+        <img src="img/butterfly_01.png" alt="Page Top">
+      </a>
+    </div>
+
+    <!-- ヘッダー -->
+    <!--カスタム部分(ヘッダー・アクセントカラー・文字色・社名/団体名ロゴ)-->
+    <header>
+      <div class="header">
+        <a id="top"></a>
+        <img src="img\header_02.png" alt="" style="position:fixed;" width=100%;>
+        <img src="img\header_01.png" alt="" style="position:fixed;" width=100%>
+
+        <!--ナビゲーションバー-->
+        <div style="display: flex; justify-content: space-between;">
+
+          <a href="#works">
+            <div class="bird" style="flex: 1;">
+              <img src="img\bird_01.png" alt="" style="position:fixed; margin:20% 15%" width=30%;>
+            </div>
+          </a>
+
+          <a href="#currentProject">
+            <div class="bird" style="flex: 1;">
+              <img src="img\bird_02.png" alt="" style="position:fixed; margin:18% -5%" width=30%;>
+            </div>
+          </a>
+
+          <a href="#contact">
+            <div class="bird" style="flex: 1;">
+              <img src="img\bird_03.png" alt="" style="position:fixed; margin:6% -40%" width=30%;>
+            </div>
+        </div><!--display:flex;の終了-->
+      </div><!--ヘッダークラスの終了-->
+    </header>
+    </a>
+
+
+    <!-- メイン -->
+    <div class="container" id="main">
+      <img src="img\branch.png" alt="" style="position:fixed;margin-left:-10%;" width=75%><br><br><br><br><br>
+      <!--自己紹介-->
+      <details class="details">
+        <summary class="details__summary">
+          <p size="9" class="text-light fs-1" style="margin-left:-10%;margin-top:-8%">Profile</p>
+            <br><br>
+          <p class="fs-4">んなああああああああああああああ<br>
+            んなああああああああああああああ<br>
+          <p class="opacity-75 fs-4">んなああああああああああああああ<br>
+          <p class="opacity-50 fs-4">んなああああああああああああああ<br>
+        </summary>
+        <div class="details__content">
+          <p class="fs-4">んなああああああああああああああ<br>
+          <p class="fs-4">んなああああああああああああああ<br>
+        </div>
+      </details>
+
+
+      <!--画像スライダー-->
+      <img src="img\vine.png" alt="" style="transform: rotate(180deg);"width=75%>
+      <p style="margin: 0;">
+        <font size="9" style="position:fixed;margin-top:-25%";>Works</font>
+      </p>
+
+      <div class="slider">
+        <img src="img\img_02.jpg" width="100%" height="100%" alt="">
+        <img src="img\img_03.jpg" width="100%" height="100%" alt="">
+        <img src="img\img_04.jpg" width="100%" height="100%" alt="">
+        <img src="img\img_05.jpg" width="100%" height="100%" alt="">
+      </div>
+
+      <img src="img\vine.png" alt="" style="margin-top: -10%;"width=75%>
+
+
+
+
+      <img src="img\branch.png" alt="" style="position:fixed;margin-left:-100%;" width=90%><br><br><br><br><br>
+      </br></br></br></br></br>
+      <details class="details">
+        <summary class="details__summary text-light">
+          <p class="text-light fs-1" style="margin-left:-0%;" id="currentProject">CurrentProject</p>
+        </summary>
+        <div class="details__content">
+          <img src="img/img_06.jpg" width=50%>
+          <br>
+          <p class="fs-1">うわああああああああああああああ<br>
+            あああああああああああああああああああああああああああああ<br>
+            あああああああああああああああああああああああああああああ<br>
+            あああああああああああああああああああああああああああああ<br>
+            あああああああああああああああああああああああああああああ<br>
+            あああああああああああああああああああああああああああああ<br>
+            あああああああああああああああああああああああああああああ<br>
+            あああああああああああああああああああああああああああああ<br>
+            あああああああああああああああああああああああああああああ</p><br>
+        </div>
+      </details>
+    </div>
+
+    </div><!--containerの終了-->
+
+
+
+    <!--フッター-->
+    <div class="footer" id="contact">
+      <img src="img\footer_02.png" alt="" style="position:fixed;margin-bottom:0;" width=100%>
+      <img src="img\footer_01.png" alt="" style="position:fixed;margin-bottom:0;" width=100%>
+    </div>
+
+  </font>
+
+
+
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+</body>
+
+
+</html>
