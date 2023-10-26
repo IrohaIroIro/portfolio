@@ -1,0 +1,174 @@
+@charset "UTF-8";
+/*フォント*/
+/* ウィジェット500、800が使える？ */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&display=swap");
+body {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  /* Webフォントの指定 */
+  font-weight: 500;
+  transform: rotate(0.03deg);
+  /* シャギーを防ぐ指定 */
+  background-color: #F0EDDF;
+  /* 背景色指定 */
+  margin: 0px;
+}
+
+.main{
+  color:#555533
+}
+header{
+  margin-bottom: 80%;
+}
+
+/*横スクロールを禁止する*/
+html,body {
+  overflow-x: hidden;
+}
+
+/*行間隔を揃える*/
+p {
+  margin-bottom: 0;
+}
+
+/*-----------------------*/
+/*details*/
+/*-----------------------*/
+/* 開いている状態 */
+details[open] .close {
+	display: none ;
+}
+/* 閉じている状態 */
+details:not([open]) .open {
+	display: none ;
+}
+
+/*details内の行間隔調整*/
+.details {
+  line-height: 2; 
+}
+
+/*detailsの三角形削除*/
+summary {
+  display: block;
+  list-style: none;
+}
+
+
+
+/*-----------------------*/
+/*画像スライダー*/
+/*-----------------------*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+  width:94%;
+  margin:0 auto;
+}
+
+.slider img {
+  width:60vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+  height:auto;
+}
+
+.slider .slick-slide {
+transform: scale(0.8);/*左右の画像のサイズを80%に*/
+transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+  position: absolute;/*絶対配置にする*/
+  top: 42%;
+  cursor: pointer;/*マウスカーソルを指マークに*/
+  outline: none;/*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid #666;/*矢印の色*/
+  border-right: 2px solid #666;/*矢印の色*/
+  height: 15px;
+  width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+  left: -1.5%;
+  transform: rotate(-135deg);
+}
+.slick-next {/*次へ矢印の位置と形状*/
+  right: -1.5%;
+  transform: rotate(45deg);
+}
+
+
+/*-----------------------*/
+/*ページトップボタン*/
+/*-----------------------*/
+#page-top {
+  position: fixed;
+  right:-30%;
+top:100%;
+  opacity: 0.9;
+}
+
+#page-top a {
+  position: relative;
+  display: block;
+  width: 20%;
+  height: 20%;
+  text-decoration: none;
+}
+
+#page-top img {
+  width: 200%; /* 画像をボタンのサイズに合わせる */
+  height: 200%;
+}
+
+
+/*背景の処理*/
+
+
+
+
+/*横からアニメーション*/
+#wrap {
+  position: relative;
+  overflow: hidden;
+  width: 800px; /* コンテナの幅を設定 */
+  margin: 0 auto;
+}
+
+.slideConts {
+  -webkit-transition: 2.0s;
+  -o-transition: 2.0s;
+  transition: 2.0s;
+  width: 90%; /* コンテンツの幅を100%に設定 */
+}
+
+.slideContsL {
+  transform: translate(-800px, 0); /* 初期位置を左に移動 */
+}
+
+.slideContsL.show {
+  transform: translate(0, 0) !important; /* 表示時の位置を調整 */
+}
+
+.slideContsR.show {
+  transform: translate(0, 0) !important; /* 表示時の位置を調整 */
+}
+
+
+/**/
+.fadeConts {
+  
+  opacity: 0;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+}
+.fadeConts.show {
+  opacity: 1;
+}

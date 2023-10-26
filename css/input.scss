@@ -1,0 +1,54 @@
+@charset "UTF-8";
+.details {
+  .summary {
+  position: relative;
+  display: block;
+  padding: 10px 10px 10px 30px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #d5ecd0;
+  transition: 0.2s;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    transition:0.2s;
+    left: 0.1em;
+    width: 1.5em;
+    height: 1.5em;
+    background:url('https://api.iconify.design/icon-park/right.svg') no-repeat center / contain;
+    }
+  }
+
+  &.is-opened>.summary::after {
+    transform:translateY(-50%) rotate(90deg);
+  }
+
+  .content {
+    position: relative;
+    overflow: hidden;
+    padding: 1em;
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    transition: padding .25s, height .25s, opacity .25s;
+  }
+
+  &:not(.is-opened)>.content {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  &+.details {
+    margin-top:10px;
+  }
+}

@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+button,
+summary {
+  cursor: pointer;
+}
+
+button {
+  border: none;
+}
+
+summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.Accordion {
+  margin: 20px;
+  border: 2px solid #ccf;
+}
+
+.Accordion__Summary {
+  width: 100%;
+  font-size: 18px;
+  position: relative;
+  padding: 20px;
+  background-color: #ccf;
+  color: #33c;
+  text-align: left;
+}
+.Accordion__Summary::before, .Accordion__Summary::after {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 16px;
+  height: 2px;
+  content: "";
+  background-color: currentColor;
+  right: 30px;
+}
+.Accordion__Summary::before {
+  transform: translateY(-50%);
+}
+.Accordion__Summary::after {
+  transition: transform 0.5s;
+  transform: translateY(-50%) rotate(-90deg);
+}
+.Accordion__Summary[aria-expanded=true]::after {
+  transform: translateY(-50%);
+}
+.Accordion[open]:not([data-accordion-before-close]) .Accordion__Summary::after {
+  transform: translateY(-50%);
+}
+
+.Accordion__Content {
+  overflow: hidden;
+}
+.Accordion__Content > p {
+  padding: 20px;
+}
+
+/*# sourceMappingURL=output.css.map */
