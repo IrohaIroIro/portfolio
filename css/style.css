@@ -19,6 +19,14 @@ body {
 header{
   margin-bottom: 80%;
 }
+footer{
+  color:#F0EDDF;
+}
+
+.profile{
+  margin-bottom: 20%;
+}
+
 
 /*横スクロールを禁止する*/
 html,body {
@@ -29,6 +37,16 @@ html,body {
 p {
   margin-bottom: 0;
 }
+
+/*画像処理*/
+.green-shadow{
+  filter: drop-shadow(0px 0px 5px rgba(120, 160, 120, 1.0));
+}
+
+/*-----------------------*/
+/*トップページへ戻る*/
+/*-----------------------*/
+
 
 /*-----------------------*/
 /*details*/
@@ -54,12 +72,28 @@ summary {
 }
 
 
+/*アコーディオンアニメーション*/
+  
+  button { font-family: inherit; font-size: inherit; }
+  details {
+  height: var(--collapsed);
+  overflow: hidden;
+  transition: height 300ms cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  }
+  details[open] {
+  height: var(--expanded);
+  }
+/*参考URL：http://kachibito.net/css/details-animation*/
+  
+
+
+
 
 /*-----------------------*/
 /*画像スライダー*/
 /*-----------------------*/
 .slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
-  width:94%;
+  width:50%;
   margin:0 auto;
 }
 
@@ -142,9 +176,9 @@ top:100%;
 }
 
 .slideConts {
-  -webkit-transition: 2.0s;
-  -o-transition: 2.0s;
-  transition: 2.0s;
+  -webkit-transition: 2.5s;
+  -o-transition: 2.5s;
+  transition: 2.5s;
   width: 90%; /* コンテンツの幅を100%に設定 */
 }
 
@@ -161,7 +195,7 @@ top:100%;
 }
 
 
-/**/
+/*フェード*/
 .fadeConts {
   
   opacity: 0;
@@ -172,3 +206,5 @@ top:100%;
 .fadeConts.show {
   opacity: 1;
 }
+
+
