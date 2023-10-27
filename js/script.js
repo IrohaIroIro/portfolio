@@ -1,67 +1,67 @@
-console.log("js“Ç‚Ü‚ê‚½‚æ");
+console.log("jsèª­è¾¼ã¾ã‚ŒãŸã‚ˆ");
 
-  // ƒXƒ‰ƒCƒhƒCƒ“
-  var slideConts = document.querySelectorAll('.slideConts'); // ƒXƒ‰ƒCƒh‚Å•\¦‚³‚¹‚é—v‘f‚Ìæ“¾
-  var slideContsRect = []; // —v‘f‚ÌˆÊ’u‚ğ“ü‚ê‚é‚½‚ß‚Ì”z—ñ
-  var slideContsTop = []; // —v‘f‚ÌˆÊ’u‚ğ“ü‚ê‚é‚½‚ß‚Ì”z—ñ
-  var windowY = window.pageYOffset; // ƒEƒBƒ“ƒhƒE‚ÌƒXƒNƒ[ƒ‹ˆÊ’u‚ğæ“¾
-  var windowH = window.innerHeight; // ƒEƒBƒ“ƒhƒE‚Ì‚‚³‚ğæ“¾
-  var remainder = 100; // ‚¿‚å‚Á‚Æ‚Í‚İo‚³‚¹‚é•”•ª
-  // —v‘f‚ÌˆÊ’u‚ğæ“¾
+  // ã‚¹ãƒ©ã‚¤ãƒ‰ã‚¤ãƒ³
+  var slideConts = document.querySelectorAll('.slideConts'); // ã‚¹ãƒ©ã‚¤ãƒ‰ã§è¡¨ç¤ºã•ã›ã‚‹è¦ç´ ã®å–å¾—
+  var slideContsRect = []; // è¦ç´ ã®ä½ç½®ã‚’å…¥ã‚Œã‚‹ãŸã‚ã®é…åˆ—
+  var slideContsTop = []; // è¦ç´ ã®ä½ç½®ã‚’å…¥ã‚Œã‚‹ãŸã‚ã®é…åˆ—
+  var windowY = window.pageYOffset; // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ä½ç½®ã‚’å–å¾—
+  var windowH = window.innerHeight; // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®é«˜ã•ã‚’å–å¾—
+  var remainder = 100; // ã¡ã‚‡ã£ã¨ã¯ã¿å‡ºã•ã›ã‚‹éƒ¨åˆ†
+  // è¦ç´ ã®ä½ç½®ã‚’å–å¾—
   for (var i = 0; i < slideConts.length; i++) {
     slideContsRect.push(slideConts[i].getBoundingClientRect());
   }
   for (var i = 0; i < slideContsRect.length; i++) {
     slideContsTop.push(slideContsRect[i].top + windowY);
   }
-  // ƒEƒBƒ“ƒhƒE‚ªƒŠƒTƒCƒY‚³‚ê‚½‚çAƒEƒBƒ“ƒhƒE‚Ì‚‚³‚ğÄæ“¾
+  // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒãƒªã‚µã‚¤ã‚ºã•ã‚ŒãŸã‚‰ã€ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®é«˜ã•ã‚’å†å–å¾—
   window.addEventListener('resize', function () {
     windowH = window.innerHeight;
   });
-  // ƒXƒNƒ[ƒ‹‚³‚ê‚½‚ç
+  // ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã•ã‚ŒãŸã‚‰
   window.addEventListener('scroll', function () {
-    // ƒXƒNƒ[ƒ‹ˆÊ’u‚ğæ“¾
+    // ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ä½ç½®ã‚’å–å¾—
     windowY = window.pageYOffset;
     
     for (var i = 0; i < slideConts.length; i++) {
-      // —v‘f‚ª‰æ–Ê‚Ì‰º’[‚É‚©‚©‚Á‚½‚ç
+      // è¦ç´ ãŒç”»é¢ã®ä¸‹ç«¯ã«ã‹ã‹ã£ãŸã‚‰
       if(windowY > slideContsTop[i] - windowH + remainder) {
-        // .show‚ğ•t—^
+        // .showã‚’ä»˜ä¸
         slideConts[i].classList.add('show');
       } else {
-        // ‹t‚É.show‚ğíœ
+        // é€†ã«.showã‚’å‰Šé™¤
         slideConts[i].classList.remove('show');
       }
     }
-  });var slideConts = document.querySelectorAll('.slideConts'); // ƒXƒ‰ƒCƒh‚Å•\¦‚³‚¹‚é—v‘f‚Ìæ“¾
-  var slideContsRect = []; // —v‘f‚ÌˆÊ’u‚ğ“ü‚ê‚é‚½‚ß‚Ì”z—ñ
-  var slideContsTop = []; // —v‘f‚ÌˆÊ’u‚ğ“ü‚ê‚é‚½‚ß‚Ì”z—ñ
-  var windowY = window.pageYOffset; // ƒEƒBƒ“ƒhƒE‚ÌƒXƒNƒ[ƒ‹ˆÊ’u‚ğæ“¾
-  var windowH = window.innerHeight; // ƒEƒBƒ“ƒhƒE‚Ì‚‚³‚ğæ“¾
-  var remainder = 100; // ‚¿‚å‚Á‚Æ‚Í‚İo‚³‚¹‚é•”•ª
-  // —v‘f‚ÌˆÊ’u‚ğæ“¾
+  });var slideConts = document.querySelectorAll('.slideConts'); // ã‚¹ãƒ©ã‚¤ãƒ‰ã§è¡¨ç¤ºã•ã›ã‚‹è¦ç´ ã®å–å¾—
+  var slideContsRect = []; // è¦ç´ ã®ä½ç½®ã‚’å…¥ã‚Œã‚‹ãŸã‚ã®é…åˆ—
+  var slideContsTop = []; // è¦ç´ ã®ä½ç½®ã‚’å…¥ã‚Œã‚‹ãŸã‚ã®é…åˆ—
+  var windowY = window.pageYOffset; // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ä½ç½®ã‚’å–å¾—
+  var windowH = window.innerHeight; // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®é«˜ã•ã‚’å–å¾—
+  var remainder = 100; // ã¡ã‚‡ã£ã¨ã¯ã¿å‡ºã•ã›ã‚‹éƒ¨åˆ†
+  // è¦ç´ ã®ä½ç½®ã‚’å–å¾—
   for (var i = 0; i < slideConts.length; i++) {
     slideContsRect.push(slideConts[i].getBoundingClientRect());
   }
   for (var i = 0; i < slideContsRect.length; i++) {
     slideContsTop.push(slideContsRect[i].top + windowY);
   }
-  // ƒEƒBƒ“ƒhƒE‚ªƒŠƒTƒCƒY‚³‚ê‚½‚çAƒEƒBƒ“ƒhƒE‚Ì‚‚³‚ğÄæ“¾
+  // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒãƒªã‚µã‚¤ã‚ºã•ã‚ŒãŸã‚‰ã€ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®é«˜ã•ã‚’å†å–å¾—
   window.addEventListener('resize', function () {
     windowH = window.innerHeight;
   });
-  // ƒXƒNƒ[ƒ‹‚³‚ê‚½‚ç
+  // ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã•ã‚ŒãŸã‚‰
   window.addEventListener('scroll', function () {
-    // ƒXƒNƒ[ƒ‹ˆÊ’u‚ğæ“¾
+    // ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ä½ç½®ã‚’å–å¾—
     windowY = window.pageYOffset;
     
     for (var i = 0; i < slideConts.length; i++) {
-      // —v‘f‚ª‰æ–Ê‚Ì‰º’[‚É‚©‚©‚Á‚½‚ç
+      // è¦ç´ ãŒç”»é¢ã®ä¸‹ç«¯ã«ã‹ã‹ã£ãŸã‚‰
       if(windowY > slideContsTop[i] - windowH + remainder) {
-        // .show‚ğ•t—^
+        // .showã‚’ä»˜ä¸
         slideConts[i].classList.add('show');
       } else {
-        // ‹t‚É.show‚ğíœ
+        // é€†ã«.showã‚’å‰Šé™¤
         slideConts[i].classList.remove('show');
       }
     }
@@ -69,76 +69,68 @@ console.log("js“Ç‚Ü‚ê‚½‚æ");
 
 
 
-// ƒtƒF[ƒh
-  var fadeConts = document.querySelectorAll('.fadeConts'); // ƒtƒF[ƒh‚³‚¹‚é—v‘f‚Ìæ“¾
-var fadeContsRect = []; // —v‘f‚ÌˆÊ’u‚ğæ“¾‚·‚é‚½‚ß‚Ì”z—ñ
-var fadeContsTop = []; // —v‘f‚ÌˆÊ’u‚ğæ“¾‚·‚é‚½‚ß‚Ì”z—ñ
-var windowY = window.pageYOffset; // ƒEƒBƒ“ƒhƒE‚ÌƒXƒNƒ[ƒ‹ˆÊ’u
-var windowH = window.innerHeight; // ƒEƒBƒ“ƒhƒE‚Ì‚‚³
-var remainder = 100; // ‚¿‚å‚Á‚Æ‚Í‚İo‚³‚¹‚é•”•ª
-// —v‘f‚ÌˆÊ’u‚ğæ“¾
+
+// ãƒ•ã‚§ãƒ¼ãƒ‰
+  var fadeConts = document.querySelectorAll('.fadeConts'); // ãƒ•ã‚§ãƒ¼ãƒ‰ã•ã›ã‚‹è¦ç´ ã®å–å¾—
+var fadeContsRect = []; // è¦ç´ ã®ä½ç½®ã‚’å–å¾—ã™ã‚‹ãŸã‚ã®é…åˆ—
+var fadeContsTop = []; // è¦ç´ ã®ä½ç½®ã‚’å–å¾—ã™ã‚‹ãŸã‚ã®é…åˆ—
+var windowY = window.pageYOffset; // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ä½ç½®
+var windowH = window.innerHeight; // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®é«˜ã•
+
+// è¦ç´ ã®ä½ç½®ã‚’å–å¾—
 for (var i = 0; i < fadeConts.length; i++) {
   fadeContsRect.push(fadeConts[i].getBoundingClientRect());
 }
 for (var i = 0; i < fadeContsRect.length; i++) {
   fadeContsTop.push(fadeContsRect[i].top + windowY);
 }
-// ƒEƒBƒ“ƒhƒE‚ªƒŠƒTƒCƒY‚³‚ê‚½‚çAƒEƒBƒ“ƒhƒE‚Ì‚‚³‚ğÄæ“¾
+// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒãƒªã‚µã‚¤ã‚ºã•ã‚ŒãŸã‚‰ã€ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®é«˜ã•ã‚’å†å–å¾—
 window.addEventListener('resize', function () {
   windowH = window.innerHeight;
 });
-// ƒXƒNƒ[ƒ‹‚³‚ê‚½‚ç
+// ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã•ã‚ŒãŸã‚‰
 window.addEventListener('scroll', function () {
-  // ƒXƒNƒ[ƒ‹ˆÊ’u‚ğæ“¾
+  // ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ä½ç½®ã‚’å–å¾—
   windowY = window.pageYOffset;
   
   for (var i = 0; i < fadeConts.length; i++) {
-    // —v‘f‚ª‰æ–Ê‚Ì‰º’[‚É‚©‚©‚Á‚½‚ç
+    // è¦ç´ ãŒç”»é¢ã®ä¸‹ç«¯ã«ã‹ã‹ã£ãŸã‚‰
     if(windowY > fadeContsTop[i] - windowH + remainder) {
-      // .show‚ğ•t—^
+      // .showã‚’ä»˜ä¸
       fadeConts[i].classList.add('show');
     } else {
-      // ‹t‚É.show‚ğíœ
+      // é€†ã«.showã‚’å‰Šé™¤
       fadeConts[i].classList.remove('show');
     }
   }
 });
 
 
-// ƒAƒR[ƒfƒBƒIƒ“ƒAƒjƒ[ƒVƒ‡ƒ“
-const ANIMATION_TIME = 250;
-const OFFSET_TIME = 5;
-
-document.addEventListener('DOMContentLoaded', function () {
-
-  const accordions = document.querySelectorAll('.details');
-  accordions.forEach((accordion) => {
-    const title = accordion.querySelector('.summary');
-    title.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (!accordion.open) {
-        accordion.open = true;
-        setTimeout(() => {
-          accordion.classList.add('is-opened'); 
-        }, OFFSET_TIME);
-        //
-      } else if (accordion.open) {
-        accordion.classList.remove('is-opened'); 
-        setTimeout(() => {
-          accordion.open = false;
-        }, ANIMATION_TIME + OFFSET_TIME);
+// ã‚¢ã‚³ãƒ¼ãƒ‡ã‚£ã‚ªãƒ³ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³
+function setDetailsHeight(selector, wrapper = document) {
+  const setHeight = (detail, open = false) => {
+    detail.open = open;
+    const rect = detail.getBoundingClientRect();
+    detail.dataset.width = rect.width;
+    detail.style.setProperty(open ? `--expanded` : `--collapsed`,`${rect.height}px`);
+  }
+  const details = wrapper.querySelectorAll(selector);
+  const RO = new ResizeObserver(entries => {
+    return entries.forEach(entry => {
+      const detail = entry.target;
+      const width = parseInt(detail.dataset.width, 10);
+      if (width !== entry.contentRect.width) {
+        detail.removeAttribute('style');
+        setHeight(detail);
+        setHeight(detail, true);
+        detail.open = false;
       }
-    });
-
-
-    accordion.addEventListener('toggle', () => {
-      const hasOpenedClass = accordion.classList.contains('is-opened');
-
-      if (accordion.open && !hasOpenedClass) {
-        accordion.classList.add('is-opened');
-      } else if (!accordion.open && hasOpenedClass) {
-        accordion.classList.remove('is-opened');
-      }
-    });
+    })
   });
-});
+  details.forEach(detail => {
+    RO.observe(detail);
+  });
+}
+
+/* Run it */
+setDetailsHeight('details');
