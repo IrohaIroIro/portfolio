@@ -134,3 +134,4 @@ function setDetailsHeight(selector, wrapper = document) {
 
 /* Run it */
 setDetailsHeight('details');
+
