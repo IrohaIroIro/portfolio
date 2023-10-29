@@ -8,7 +8,7 @@ body {
   font-weight: 500;
   transform: rotate(0.03deg);
   /* シャギーを防ぐ指定 */
-  background-color: #F0EDDF;
+  background-color: #fffcf1;
   /* 背景色指定 */
   margin: 0px;
 }
@@ -17,7 +17,8 @@ body {
   color:#555533
 }
 header{
-  margin-bottom: 80%;
+  margin-top:-5%;
+  margin-bottom: 120%;
 }
 footer{
   color:#F0EDDF;
@@ -25,6 +26,10 @@ footer{
 
 .profile{
   margin-bottom: 20%;
+}
+
+li{
+  list-style:none;
 }
 
 
@@ -38,10 +43,41 @@ p {
   margin-bottom: 0;
 }
 
+.item{
+  display:inline-block;
+  padding-top: 3%;
+  padding-bottom: 0;
+  font-weight:bold;
+    background:linear-gradient(transparent 70%, #99cc99 0%);
+}
+
 /*画像処理*/
 .green-shadow{
   filter: drop-shadow(0px 0px 5px rgba(120, 160, 120, 1.0));
 }
+.bird:hover img{
+transform: scale(1.1);
+}
+
+
+/*-----------------------*/
+/*背景の処理*/
+/*-----------------------*/
+.box{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+/* ドット斜め */
+.bg_skew_dot{
+  background-image:
+    radial-gradient(#c6bc9025 20%, transparent 0%),
+    radial-gradient(#c6bc9015 18%, transparent 0%);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
 
 /*-----------------------*/
 /*トップページへ戻る*/
@@ -76,20 +112,17 @@ summary::-webkit-details-marker {
 
 
 /*アコーディオンアニメーション*/
-  
+/* button, details { width: 25rem; } */
   button { font-family: inherit; font-size: inherit; }
   details {
   height: var(--collapsed);
   overflow: hidden;
-  transition: height 300ms cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: height 300ms cubic-bezier(0, 0, 0, 0);
   }
   details[open] {
   height: var(--expanded);
   }
 /*参考URL：http://kachibito.net/css/details-animation*/
-  
-
-
 
 
 /*-----------------------*/
@@ -165,9 +198,6 @@ top:100%;
 }
 
 
-/*背景の処理*/
-
-
 
 
 /*横からアニメーション*/
@@ -182,7 +212,6 @@ top:100%;
   -webkit-transition: 2.5s;
   -o-transition: 2.5s;
   transition: 2.5s;
-  width: 90%; /* コンテンツの幅を100%に設定 */
 }
 
 .slideContsL {
@@ -210,4 +239,241 @@ top:100%;
   opacity: 1;
 }
 
+/*スライド*/
+.wrap {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+.slideshow {
+  display: flex;
+}
+.slide-content {
+  width: 500px;
+  height: 300px;
+}
 
+
+.slideshow {
+  display: flex;
+  animation: loop-slide 50s infinite linear 1s both;
+}
+@keyframes loop-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* ホバー時に動きを止める（パターン2・3）*/
+.slide-paused:hover .slideshow {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+/* ホバー時の装飾（パターン3） */
+.slide-content-hover {
+  transition: all 0.2s;
+  margin-right: 20px;
+}
+.slide-content-hover:hover {
+  transform:scale(95%);
+  border-radius: 0 10%;
+  box-shadow: 0 3px 10px 0 #333;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.animation{
+animation-name: loop-slide;/* アニメーション名 */
+animation-duration: 20s;/* 開始から終了までの所要時間 */
+animation-iteration-count: infinite;/* アニメーションのループ回数 */
+animation-timing-function: linear;/* 動きの加減速 */
+animation-delay: 1s;/* アニメーションが開始するまでの遅延時間 */
+animation-fill-mode: both;            /* アニメーション開始前・終了後の挙動 */
+}
+
+/*画像*/
+section {
+  background-color: #dcd9cb;
+  padding: 10% 0;
+}
+
+.container {
+  max-width: 100%px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.carousel {
+  display: block;
+  text-align: left;
+  position: relative;
+  margin-bottom: 5%;
+}
+.carousel > input {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+.carousel > input:nth-of-type(6):checked ~ .carousel__slides .carousel__slide:first-of-type {
+  margin-left: -500%;
+}
+.carousel > input:nth-of-type(5):checked ~ .carousel__slides .carousel__slide:first-of-type {
+  margin-left: -400%;
+}
+.carousel > input:nth-of-type(4):checked ~ .carousel__slides .carousel__slide:first-of-type {
+  margin-left: -300%;
+}
+.carousel > input:nth-of-type(3):checked ~ .carousel__slides .carousel__slide:first-of-type {
+  margin-left: -200%;
+}
+.carousel > input:nth-of-type(2):checked ~ .carousel__slides .carousel__slide:first-of-type {
+  margin-left: -100%;
+}
+.carousel > input:nth-of-type(1):checked ~ .carousel__slides .carousel__slide:first-of-type {
+  margin-left: 0%;
+}
+.carousel > input:nth-of-type(1):checked ~ .carousel__thumbnails li:nth-of-type(1) {
+  box-shadow: 0px 0px 0px 5px rgba(124, 178, 124, 1.0);
+}
+.carousel > input:nth-of-type(2):checked ~ .carousel__thumbnails li:nth-of-type(2) {
+  box-shadow: 0px 0px 0px 5px rgba(124, 178, 124, 1.0);
+}
+.carousel > input:nth-of-type(3):checked ~ .carousel__thumbnails li:nth-of-type(3) {
+  box-shadow: 0px 0px 0px 5px rgba(124, 178, 124, 1.0);
+}
+.carousel > input:nth-of-type(4):checked ~ .carousel__thumbnails li:nth-of-type(4) {
+  box-shadow: 0px 0px 0px 5px rgba(124, 178, 124, 1.0);
+}
+.carousel > input:nth-of-type(5):checked ~ .carousel__thumbnails li:nth-of-type(5) {
+  box-shadow: 0px 0px 0px 5px rgba(124, 178, 124, 1.0);
+}
+.carousel > input:nth-of-type(6):checked ~ .carousel__thumbnails li:nth-of-type(6) {
+  box-shadow: 0px 0px 0px 5px rgba(124, 178, 124, 1.0);
+}
+
+.carousel__slides {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.carousel__slide {
+  position: relative;
+  display: block;
+  flex: 1 0 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 300ms ease-out;
+  vertical-align: top;
+  box-sizing: border-box;
+  white-space: normal;
+}
+.carousel__slide figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.carousel__slide div {
+  position: relative;
+  width: 100%;
+}
+.carousel__slide div:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: calc(2 / 3 * 100%);
+}
+.carousel__slide div > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.carousel__slide img {
+  display: block;
+  flex: 1 1 auto;
+  object-fit: cover;
+}
+.carousel__slide figcaption {
+  align-self: flex-start;
+  padding: 20px 50px 0 20px;
+  flex: 0 0 auto;
+  width: 100%;
+  min-width: 40%;
+}
+.carousel__slide .credit {
+  margin-top: 1rem;
+  color: rgba(0, 0, 0, 0.5);
+  display: block;
+}
+.carousel__slide.scrollable {
+  overflow-y: scroll;
+}
+
+.carousel__thumbnails {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  margin: 0 -10px;
+}
+.carousel__slides + .carousel__thumbnails {
+  margin-top: 5%;
+}
+.carousel__thumbnails li {
+  flex: 1 1 auto;
+  max-width: calc(16.6666666667% - 20px);
+  margin: 0 10px;
+  transition: all 300ms ease-in-out;
+}
+.carousel__thumbnails label {
+  display: block;
+  position: relative;
+}
+.carousel__thumbnails label:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: calc(1 / 1 * 100%);
+}
+.carousel__thumbnails label > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.carousel__thumbnails label:hover, .carousel__thumbnails label:focus {
+  cursor: pointer;
+}
+.carousel__thumbnails label:hover img, .carousel__thumbnails label:focus img {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.25);
+  transition: all 300ms ease-in-out;
+}
+.carousel__thumbnails img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 参考サイト：https://webdesignfacts.net/entry/css-carousel8/#gsc.tab=0 */
