@@ -11,6 +11,8 @@ body {
   background-color: #fffcf1;
   /* 背景色指定 */
   margin: 0px;
+
+  font-size:110%
 }
 
 .main{
@@ -165,7 +167,7 @@ button, details { width: 25rem; }
 #page-top {
   position: fixed;
   right:-30%;
-top:100%;
+top:90%;
   opacity: 0.9;
 }
 
@@ -404,7 +406,7 @@ section {
   padding: 20px 50px 0 20px;
   flex: 0 0 auto;
   width: 100%;
-  min-width: 40%;
+  min-width: 50%;
 }
 .carousel__slide .credit {
   margin-top: 1rem;
@@ -420,7 +422,7 @@ section {
   padding: 0;
   margin: 0;
   display: flex;
-  margin: 0 -10px;
+  margin: 0 0px;
 }
 .carousel__slides + .carousel__thumbnails {
   margin-top: 5%;
