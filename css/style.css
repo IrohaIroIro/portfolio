@@ -1,9 +1,9 @@
 @charset "UTF-8";
 /*フォント*/
 /* ウィジェット500、800が使える？ */
-@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700&display=swap');
 body {
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-family: 'Zen Maru Gothic', serif;
   /* Webフォントの指定 */
   font-weight: 500;
   transform: rotate(0.03deg);
@@ -22,6 +22,7 @@ header{
 }
 footer{
   color:#F0EDDF;
+  margin-top: 5%;
 }
 
 .profile{
@@ -58,6 +59,13 @@ p {
 .bird:hover img{
 transform: scale(1.1);
 }
+.bird:hover .hover-image {
+  display: block; /* ホバー時に新しい画像を表示 */
+}
+.bird .hover-image {
+  display: none; /* 通常は新しい画像を非表示 */
+}
+
 
 
 /*-----------------------*/
@@ -112,7 +120,7 @@ summary::-webkit-details-marker {
 
 
 /*アコーディオンアニメーション*/
-/* button, details { width: 25rem; } */
+button, details { width: 25rem; }
   button { font-family: inherit; font-size: inherit; }
   details {
   height: var(--collapsed);
@@ -125,29 +133,6 @@ summary::-webkit-details-marker {
 /*参考URL：http://kachibito.net/css/details-animation*/
 
 
-/*-----------------------*/
-/*画像スライダー*/
-/*-----------------------*/
-.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
-  width:50%;
-  margin:0 auto;
-}
-
-.slider img {
-  width:60vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
-  height:auto;
-}
-
-.slider .slick-slide {
-transform: scale(0.8);/*左右の画像のサイズを80%に*/
-transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
-opacity: 0.5;/*透過50%*/
-}
-
-.slider .slick-slide.slick-center{
-transform: scale(1);/*中央の画像のサイズだけ等倍に*/
-opacity: 1;/*透過なし*/
-}
 
 
 /*矢印の設定*/
@@ -209,9 +194,9 @@ top:100%;
 }
 
 .slideConts {
-  -webkit-transition: 2.5s;
-  -o-transition: 2.5s;
-  transition: 2.5s;
+  -webkit-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 2.0s;
 }
 
 .slideContsL {
@@ -231,9 +216,9 @@ top:100%;
 .fadeConts {
   
   opacity: 0;
-  -webkit-transition: .5s;
-  -o-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.5s;
 }
 .fadeConts.show {
   opacity: 1;
@@ -295,9 +280,12 @@ animation-delay: 1s;/* アニメーションが開始するまでの遅延時間
 animation-fill-mode: both;            /* アニメーション開始前・終了後の挙動 */
 }
 
-/*画像*/
+
+/*-----------------------*/
+/*画像スライダー*/
+/*-----------------------*/
 section {
-  background-color: #dcd9cb;
+  background-color: #dcd9cb50;
   padding: 10% 0;
 }
 
@@ -379,7 +367,6 @@ section {
   height: 100%;
   overflow: hidden;
   transition: all 300ms ease-out;
-  vertical-align: top;
   box-sizing: border-box;
   white-space: normal;
 }
@@ -477,3 +464,4 @@ section {
   object-fit: cover;
 }
 /* 参考サイト：https://webdesignfacts.net/entry/css-carousel8/#gsc.tab=0 */
+
